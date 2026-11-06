@@ -1,0 +1,216 @@
+{
+  "nominal_model_not_as_built": true,
+  "checks": {
+    "tree": {
+      "pass": true,
+      "root": "base_link",
+      "links": 8,
+      "joints": 7
+    },
+    "joint_edits": {
+      "pass": true,
+      "only_two_joint_xyz_changed": true
+    },
+    "mesh_resolution": {
+      "pass": true,
+      "unique_files": 13,
+      "all_relative_paths": true
+    },
+    "visual_collision": {
+      "pass": true,
+      "matching_pairs": 17
+    },
+    "shaft_registration": {
+      "upper_arm_link": {
+        "pass": true,
+        "assumption": "Upstream nominal shaft datum transferred through registered STEP/STL mounting landmarks.",
+        "joint_separation_mm": 190.835303075715,
+        "incoming_residual_mm": 7.955875074371588e-06,
+        "outgoing_residual_mm": 2.241786189134052e-06,
+        "axis_unoriented_error_deg": 0.0,
+        "landmark_fit_max_residual_mm": 8.064239118794555e-07,
+        "circle_fits": [
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 4.6894181151557746e-06
+          },
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 5.122763409692865e-06
+          },
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 4.796461593903345e-06
+          },
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 4.601077183918889e-06
+          }
+        ],
+        "horn_fit": {
+          "vertices": 18,
+          "max_radial_residual_mm": 4.899343001607548e-05
+        },
+        "incoming_link_point_mm": [
+          -7.335035412392443e-06,
+          -3.0811042984546858e-06,
+          0.0
+        ],
+        "outgoing_link_point_mm": [
+          -188.7699983398285,
+          -27.999998556970723,
+          -4.325533681237559e-07
+        ]
+      },
+      "lower_arm_link": {
+        "pass": true,
+        "assumption": "Upstream nominal shaft datum transferred through registered STEP/STL mounting landmarks.",
+        "joint_separation_mm": 211.16403576366883,
+        "incoming_residual_mm": 2.528220000021865e-05,
+        "outgoing_residual_mm": 1.2603863005377314e-05,
+        "axis_unoriented_error_deg": 0.0,
+        "landmark_fit_max_residual_mm": 2.075610675429156e-05,
+        "circle_fits": [
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 2.5543411243944547e-05
+          },
+          {
+            "vertices": 19,
+            "max_radial_residual_mm": 2.559117806910649e-05
+          },
+          {
+            "vertices": 8,
+            "max_radial_residual_mm": 1.7418150406012245e-05
+          },
+          {
+            "vertices": 8,
+            "max_radial_residual_mm": 2.6357961206979752e-05
+          }
+        ],
+        "horn_fit": {
+          "vertices": 18,
+          "max_radial_residual_mm": 3.642093513267497e-05
+        },
+        "incoming_link_point_mm": [
+          -3.197442310920451e-11,
+          2.528220000019843e-05,
+          -3.9193908535350985e-14
+        ],
+        "outgoing_link_point_mm": [
+          -211.1000046023942,
+          5.199989106356496,
+          4.359341875898254e-06
+        ]
+      }
+    },
+    "motor_holder": {
+      "pass": true,
+      "three_x_translation_changes_mm": -76.2,
+      "orientations_preserved": true,
+      "stock_mesh_hashes_preserved": true,
+      "note": "Nominal mounting convention, not an independent physical clearance certification.",
+      "mounting_frame_common_shift_max_residual_mm": {
+        "upper": 5.202395810055109e-05,
+        "lower": 0.00011882039079754343
+      }
+    },
+    "poses": [
+      {
+        "name": "zero",
+        "radians": {},
+        "rotation_orthogonality_residual": 5.551115123125783e-16,
+        "rotation_determinant_residual": 4.440892098500626e-16,
+        "tool_relative_transform_residual": 1.1102230246251565e-16
+      },
+      {
+        "name": "reach",
+        "radians": {
+          "shoulder_lift": -0.55,
+          "elbow_flex": 0.45,
+          "wrist_flex": 0.25
+        },
+        "rotation_orthogonality_residual": 7.771561172376096e-16,
+        "rotation_determinant_residual": 7.771561172376096e-16,
+        "tool_relative_transform_residual": 1.1102230246251565e-16
+      },
+      {
+        "name": "fold",
+        "radians": {
+          "shoulder_pan": 0.6,
+          "shoulder_lift": 0.75,
+          "elbow_flex": -1.0,
+          "wrist_flex": 0.65,
+          "wrist_roll": 0.45,
+          "gripper": 0.45
+        },
+        "rotation_orthogonality_residual": 3.3306690738754696e-16,
+        "rotation_determinant_residual": 3.3306690738754696e-16,
+        "tool_relative_transform_residual": 1.1577669839545404e-16
+      },
+      {
+        "name": "opposite",
+        "radians": {
+          "shoulder_pan": -0.65,
+          "shoulder_lift": -0.5,
+          "elbow_flex": 1.0,
+          "wrist_flex": -0.7,
+          "wrist_roll": -0.6,
+          "gripper": 0.8
+        },
+        "rotation_orthogonality_residual": 4.440892098500626e-16,
+        "rotation_determinant_residual": 4.440892098500626e-16,
+        "tool_relative_transform_residual": 2.220446049250313e-16
+      }
+    ],
+    "gripper_tool": {
+      "pass": true,
+      "joint_definitions_unchanged": true,
+      "descendants_moved_only_through_FK": true
+    },
+    "source_preservation": {
+      "pass": true,
+      "original_source_sha256": "8948a9d8618908ede36c084536e8b2948dc4be7f2884fd4236c30811fc53bbc2",
+      "authoritative_mesh_hashes": {
+        "Upper_arm_SO101_extended_reach_2mm.stl": "69eb209ff46933fce113104e181a4e51740e8d483838b87f9b99b07557dc55ea",
+        "Under_arm_SO101_extended_reach_2mm.stl": "6dcd93cb1b9f540cdfc668a7bf0b67a511d79cf74a3f04b62d79729f3b2b83d8"
+      }
+    },
+    "urdfdom": {
+      "pass": true,
+      "command": "/opt/ros/jazzy/bin/check_urdf SO101ER.nominal.urdf",
+      "result": "Successfully parsed; base_link root, 8 links, 7 joints, complete gripper and tool branches."
+    },
+    "browser": {
+      "pass": true,
+      "browser": "Installed Windows Chrome, isolated headless profile",
+      "viewer": "Self-contained offline preview.html; four precomputed FK configurations using actual visual triangles without decimation",
+      "poses": [
+        "zero",
+        "reach",
+        "fold",
+        "opposite"
+      ],
+      "all_dom_ready": true,
+      "screenshots": [
+        "browser-pose-0.png",
+        "browser-pose-1.png",
+        "browser-pose-2.png",
+        "browser-pose-3.png"
+      ],
+      "visual_observation": "No obvious detached geometry at shoulder, elbow, wrist holder or gripper in these views.",
+      "limitations": "Not a gkjohnson loader execution, collision checker, arbitrary-pose sweep, or physical validation."
+    },
+    "final_artifact_integrity": {
+      "pass": true,
+      "candidate_urdf_sha256": "f3be452f27274594168ee6d5a5c4378a09f7201f292290ccb9290b9de1e8b8dc",
+      "all_13_mesh_hashes_match_manifest": true,
+      "original_urdf_unchanged": true
+    }
+  },
+  "limitations": [
+    "Original STEP saved servo offsets and tilts are not adopted; upstream nominal interfaces are used.",
+    "Masses, centres of mass and inertia remain inherited, not validated for dynamics.",
+    "Physical calibration, hardware replacements, self-collision and cable/fastener clearance are not certified."
+  ]
+}
