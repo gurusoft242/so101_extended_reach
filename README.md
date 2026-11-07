@@ -40,6 +40,8 @@ Direct MuJoCo 3.8.0 import of `SO101ER.urdf` fails on the extended-arm ASCII STL
 
 MuJoCo's import options are documented in its [URDF extensions](https://mujoco.readthedocs.io/en/3.8.0/modeling.html#urdf-extensions).
 
+The adapted import and all seven descendant frames passed in four poses on fresh CI checkouts (maximum FK error `5.55e-16`). See [packaging results](validation/2026-11-06/PACKAGING.md) for exact checks and run links. No MuJoCo rendered inspection or physical validation was performed.
+
 ## Evidence and limitations
 
 `validation/2026-10-22/PROVENANCE.json`, `VALIDATION.json`, `REPORT.md` and four screenshots preserve the original candidate evidence. Workstation paths there are historical provenance, never runtime dependencies. The archived report describes the candidate before publication; its statements about no commit/push and filenames refer to that earlier stage. The large standalone preview and original URDF archive are not duplicated here.
