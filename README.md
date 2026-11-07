@@ -26,8 +26,19 @@ The pinned MuJoCo check runs in `.github/workflows/validate-model.yml` on a fres
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install mujoco==3.8.0
-python tools/validate_model.py --mujoco
+python tools/check_mujoco.py
+python tools/prepare_mujoco.py
 ```
+
+## MuJoCo compatibility
+
+Direct MuJoCo 3.8.0 import of `SO101ER.urdf` fails on the extended-arm ASCII STL files: `stl_decoder: number of faces should be between 1 and 200000 ... perhaps this is an ASCII file?`. This was reproduced on a fresh GitHub Actions checkout: [initial check](https://github.com/gurusoft242/so101_extended_reach/actions/runs/42315395778).
+
+`python tools/prepare_mujoco.py` generates **`build/mujoco/SO101ER.mujoco.urdf`** and its local meshes. Use this generated URDF for the BISHOP MuJoCo visualization. The generator converts only the two ASCII STLs to OBJ, retaining exact decimal vertex coordinates and triangle order. Stock binary meshes are copied unchanged. It changes only those two mesh filename extensions and adds explicit MuJoCo import settings to retain visuals, relative mesh paths and fixed tool-frame bodies. It does not alter joint geometry, scales, orientations, inertias or collision definitions. Generated files are ignored by Git and can be rebuilt from the single canonical URDF.
+
+`tools/check_mujoco.py` verifies the direct-import limitation, generates a temporary adapted package, checks that all other URDF elements are unchanged, loads it in MuJoCo 3.8.0 and compares seven descendant frames against independent URDF forward kinematics in four poses. It uses `mj_forward` without dynamics stepping. This checks loading and kinematics, not rendered appearance or physical accuracy. MuJoCo mesh compilation and collision representation are engine-specific; this model is intended for visual kinematics only. In a viewer, show visual geometry (group 1) and hide collision geometry (group 0) if they overlap.
+
+MuJoCo's import options are documented in its [URDF extensions](https://mujoco.readthedocs.io/en/3.8.0/modeling.html#urdf-extensions).
 
 ## Evidence and limitations
 
