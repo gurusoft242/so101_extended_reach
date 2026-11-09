@@ -18,7 +18,9 @@ python3 tools/validate_model.py
 
 Use `<clone-directory>/SO101ER.urdf` in a URDF viewer that resolves mesh paths relative to the model file. For BISHOP with the clone under the home directory this is `~/so101_extended_reach/SO101ER.urdf`.
 
-Immediate intended use: a kinematic-only MuJoCo 3.8.0 visualization mirroring SO-101 leader/follower joint positions for the November 7, 2026 Steam Fest demonstration. Joint positions must be mapped by name in radians; apply positions and call `mj_forward`, without a dynamics stepping loop or robot commands. Motor zero/sign mapping to the actual hardware is a separate calibration concern.
+**November 7, 2026 — STEAM Fest:** The project owner reported that the live leader/follower teleoperation demo used the kinematic MuJoCo mirror. The mirror did not reproduce gripper motion. This is an event observation, not a physical calibration or dynamics test.
+
+For the MuJoCo 3.8.0 kinematic mirror, map joint positions by name in radians, apply positions and call `mj_forward` without stepping dynamics or issuing robot commands. Motor zero/sign mapping to the actual hardware is a separate calibration concern.
 
 The pinned MuJoCo check runs in `.github/workflows/validate-model.yml` on a fresh checkout:
 
